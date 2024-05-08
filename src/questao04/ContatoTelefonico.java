@@ -1,4 +1,4 @@
-package questao03;
+package questao04;
 
 import java.util.Objects;
 
@@ -80,5 +80,14 @@ public class ContatoTelefonico {
     public String toString() {
         return "ContatoTelefonico [Nome = " + nome + ", Sobrenome = " + sobrenome + ", Email = " + email + ", CodigoPais = "
                 + codigoPais + ", Telefone = " + telefone + ", Categoria = " + categoria + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContatoTelefonico that = (ContatoTelefonico) o;
+        return codigoPais == that.codigoPais && Objects.equals(nome, that.nome) && Objects.equals(sobrenome, that.sobrenome)
+                && Objects.equals(telefone, that.telefone);
     }
 }
